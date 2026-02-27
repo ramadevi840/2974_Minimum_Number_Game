@@ -1,0 +1,30 @@
+class Solution {
+    public int[] numberGame(int[] nums) {
+        int n=nums.length;
+        int a[]= new int[n];
+       PriorityQueue<Integer> pq= new PriorityQueue<>();
+       for(int i: nums){
+        pq.add(i);
+       }
+       int k=0;
+       while(!pq.isEmpty()){
+        int ali=pq.poll();
+        int bob=pq.poll();
+        a[k++]=bob;
+        a[k++]=ali;
+       }
+       return a;
+    }
+}
+
+
+// TC =O(n logn)  
+//  int a[] = new int[n];
+//         Arrays.sort(nums);  // logn
+//         for(int i=0;i<n;i+=2){ // n
+//             int ali=nums[i];
+//             int bob=nums[i+1];
+//             a[i]=bob;
+//             a[i+1]=ali;
+//         }
+//         return a;
